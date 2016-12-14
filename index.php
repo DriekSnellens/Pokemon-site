@@ -25,6 +25,7 @@
     </nav>
     <main>
       <?php
+	  //get page parameter
         if(isset($_GET['page']))
         {
           $page = $_GET['page'];
