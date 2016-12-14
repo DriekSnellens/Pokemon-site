@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body{
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('/Images/background.png');
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  vertical-align: middle;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-top: 12%;
+  display: none;
+}
+#descriptionLoader{
+  width: 34px;
+  height: 33px;
+  margin-top: 7%;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.imgLogo{
+  margin-top: 7px;
+  margin-left: 2px;
+}
+
+ ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #5ee57d;
+     font-family: 'Open Sans', sans-serif;
+ }
+
+ li {
+     float: left;
+ }
+
+ li a {
+     display: block;
+     color:black;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+ }
+
+ li a.active {
+     background-color: #5ad776;
+ }
+
+ li a:hover {
+     background-color: #5ad776;
+ }
+
+.container{
+  width: 1250px;
+  margin: 0 auto;
+}
+
+.box{
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+  height: 600px;
+  margin-top: 20px;
+  z-index: 1;
+}
+
+#searchButton {
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: -42px;
+  max-height: 0px;
+  border-radius: 15px;
+}
+#searchButton:hover{
+  /*on click #CC2525*/
+  color: #fff;
+  background: #FF0303E6;
+  cursor: pointer;
+}
+
+#searchButton:active{
+  color: #fff;
+  background: #CC2525;
+  cursor: pointer;
+}
+
+#searchBox {
+  text-align: center;
+}
+
+#searchBox input {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#pokemonGeneralInfo{
+  width: 33%;
+}
+
+
+
+#pokemonGeneralInfo label{
+  font-size: 50px;
+}
+
+.imageFilled{
+  border: 1px solid black;
+}
+#types .typeHolder {
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: white;
+  width: 55px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+#pokemonImage{
+  height: 300px;
+  width: 300px;
+  background: whitesmoke;
+}
