@@ -1,33 +1,34 @@
 <body>
-    <form method="post">
-      <div class="container">
+      <section class="container">
         <div class="box">
-          <div id="searchBox">
-            <input type="text" id="txtSearch" name="txtSearch" placeholder="Id of naam..." value=""> <span id="searchButton" onclick="getPokemonByNameOrId()"><i class="fa fa-search"></i></span>
+          <div class="searchBox">
+            <input type="text" id="txtSearch" class="txtSearch" name="txtSearch" onkeydown="checkIfEnterButton(event);" placeholder="Id of naam..." value="">
+            <span id="searchButton" class="searchButton" onclick="getPokemonByNameOrId()"><i class="fa fa-search"></i>
+            </span>
           </div>
-          <div id="pokemonGeneralInfo" class="col-1">
+          <article class="pokemonGeneralInfo">
             <center>
-              <label id="pokemonName"></label>
+              <i class="fa fa-balance-scale"></i></i>
+
+              <label id="pokemonName" class="pokemonName"></label>
               <figure>
-                <img id="pokemonImage" />
+                <img id="pokemonImage" class="pokemonImage" />
               </figure>
-              <div id="types">
+              <div class="types">
                 <div class="typeHolder" id="type1"></div>
                 <div class="typeHolder" id="type2"></div>
               </div>
-              <div id="descriptionLoader" class="loader"> </div>
-              <p id="pokemonDescription"></p>
+              <div id="descriptionLoader" class="loader descriptionLoader"> </div>
+              <p id="pokemonDescription" class="pokemonDescription"></p>
             </center>
-          </div>
+          </article>
+          <article id="pokemonDetailedInfo" class="pokemonDetailedInfo">
+           <p id="pokemonWeight" class="pokemonWeight"></p>
+            <i class="fa fa-arrows-v fa-5"></i><p id="pokemonHeight" class="pokemonHeight"></p>
+          </article>
           <center>
-            <div id="loadingSpinner" class="loader">
-            </div>
+            <div id="loadingSpinner" class="loader loadingSpinner"></div>
           </center>
-
-          <div>
-
-          </div>
         </div>
-      </div>
-    </form>
+      </section>
 </body>

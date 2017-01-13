@@ -2,7 +2,7 @@
 
 html, body{
   font-family: 'Open Sans', sans-serif;
-  background-image: url('/Images/background.png');
+  background-image: url('/Pokemon-site/Images/background.png');
   background-repeat: repeat;
   margin: 0;
   padding: 0;
@@ -20,11 +20,13 @@ html, body{
   margin-top: 12%;
   display: none;
 }
-#descriptionLoader{
+
+.descriptionLoader{
   width: 34px;
   height: 33px;
   margin-top: 7%;
 }
+
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -83,9 +85,10 @@ html, body{
   height: 600px;
   margin-top: 20px;
   z-index: 1;
+  display: inline-block;
 }
 
-#searchButton {
+.searchButton {
   padding: 4px 12px;
   font-size: 14px;
   font-weight: normal;
@@ -99,42 +102,47 @@ html, body{
   max-height: 0px;
   border-radius: 15px;
 }
-#searchButton:hover{
+
+.searchButton:hover{
   /*on click #CC2525*/
   color: #fff;
   background: #FF0303E6;
   cursor: pointer;
 }
 
-#searchButton:active{
+.searchButton:active{
   color: #fff;
   background: #CC2525;
   cursor: pointer;
 }
 
-#searchBox {
+.searchBox {
   text-align: center;
 }
 
-#searchBox input {
+.searchBox input {
   border-radius: 15px;
   padding: 5px;
 }
 
-#pokemonGeneralInfo{
+.pokemonGeneralInfo{
   width: 33%;
+  float: left;
 }
 
+.pokemonDetailedInfo{
+  /*width: 33%; */
+  display: none;
+}
 
-
-#pokemonGeneralInfo label{
+.pokemonName{
   font-size: 50px;
 }
 
 .imageFilled{
   border: 1px solid black;
 }
-#types .typeHolder {
+.typeHolder {
   padding: 5px 15px;
   border-radius: 15px;
   color: white;
@@ -142,7 +150,8 @@ html, body{
   text-transform: capitalize;
   display: inline-block;
 }
-#pokemonImage{
+
+.pokemonImage {
   height: 300px;
   width: 300px;
   background: whitesmoke;

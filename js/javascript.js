@@ -10,6 +10,7 @@ function getPokemonByNameOrId() {
         document.getElementById('pokemonName').innerHTML = capitalizeFirstLetter(pokemon.name);
         setImageWithPokemonId(pokemon.id);
         setPokemonTypes(pokemon.types);
+        setDetailedPokemonInfo(pokemon);
         $('#pokemonImage').addClass('imageFilled');
         $('#pokemonImage').show();
         $('#loadingSpinner').hide();
@@ -17,6 +18,31 @@ function getPokemonByNameOrId() {
     });
 
   });
+}
+
+function setDetailedPokemonInfo(pokemon) {
+  $(#pokemonDetailedInfo).hide();
+  var weight = pokemon.weight / 10 + ' kg';
+  var height = pokemon.height / 10 + ' m';
+  document.getElementById('pokemonWeight').innerHTML = weight;
+  document.getElementById('pokemonHeight').innerHTML = height;
+  for(var i = 0; i < pokemon.abilities.length; i++)
+  {
+    if(pokemon.abilities[i].is_hidden === false) {
+      console.log('Ability: ' + pokemon.abilities[i].ability.name.toString());
+    }
+    else {
+      console.log('Hidden ability: ' + pokemon.abilities[i].ability.name.toString());
+    }
+  }
+  $(#pokemonDetailedInfo).show();
+}
+
+function padString(value) {
+  var str = "" + value;
+  var pad = "000";
+  var ans = pad.substring(0, pad.length - str.length) + str;
+  return ans;
 }
 
 function emptyPokeDex() {
@@ -27,6 +53,18 @@ function emptyPokeDex() {
   $('#pokemonImage').hide();
   $('#pokemonImage').removeClass('imageFilled');
   document.getElementById('pokemonDescription').innerHTML = "";
+}
+
+function checkIfEnterButton(event) {
+  if(event.keyCode == 13 )
+  {
+    getPokemonByNameOrId();
+  }
+}
+
+function setEvolutionChain(pokemonID)
+{
+  //https://img.pokemondb.net/sprites/x-y/normal/bulbasaur.png
 }
 
 function setPokemonTypes(pokemonTypes) {
@@ -175,12 +213,10 @@ function setPokemonDescription(id) {
   $('#descriptionLoader').show();
   var BASE_URL = 'http://pokeapi.co/api/v2/pokemon-species/';
   var speciesURL = BASE_URL + id;
-  console.log(speciesURL);
   $.getJSON(speciesURL, function (species) {
 
     for(var i = 0; i < species.flavor_text_entries.length; i++)
     {
-      console.log(species.flavor_text_entries[i].language.name.toString());
       if(species.flavor_text_entries[i].language.name == 'en')
       {
         document.getElementById('pokemonDescription').innerHTML = species.flavor_text_entries[i].flavor_text;
@@ -193,8 +229,7 @@ function setPokemonDescription(id) {
 
 function setImageWithPokemonId(id){
   var BASE_URL = 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/';
-  var correctIdFormat = (id / 100);
-  correctIdFormat = correctIdFormat.toString().replace(".", "")
+  var correctIdFormat = padString(id);
   var imageURL = BASE_URL + correctIdFormat + '.png';
   document.getElementById('pokemonImage').src = imageURL;
 }
