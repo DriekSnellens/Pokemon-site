@@ -23,8 +23,8 @@
             </center>
           </article>
           <article id="pokemonDetailedInfo" class="pokemonDetailedInfo">
-           <p id="pokemonWeight" class="pokemonWeight"></p>
-            <i class="fa fa-arrows-v fa-5"></i><p id="pokemonHeight" class="pokemonHeight"></p>
+          <p id="pokemonWeight" class="pokemonWeight"></p>
+          <p id="pokemonHeight" class="pokemonHeight"></p>
           </article>
           <center>
             <div id="loadingSpinner" class="loader loadingSpinner"></div>

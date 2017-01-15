@@ -18,8 +18,8 @@
           <li><a href="?page=pokemon" >Pokémon</a></li>
           <li><a href="?page=pokedex">Pokédex</a></li>
           <audio id="player" src="Music/background.mp3" autoplay="true" onloadeddata="setHalfVolume()" loop="true"></audio>
-          <li id="play" onclick="pauseMusic();" style="float: right;"><a href="#">Uit</a></li>
-          <li id="pause" onclick="playMusic()" style="display: none; float: right;"><a href="#">Aan</a></li>
+          <li id="play" onclick="document.getElementById('player').play(); document.getElementById('play').style.display='none'; document.getElementById('pause').style.display='block';" style="display: none; float:right;"><a href="#"><i class="fa  fa-volume-off"></i></a></li>
+          <li id="pause" onclick="document.getElementById('player').pause(); document.getElementById('play').style.display='block'; document.getElementById('pause').style.display='none';" style=" float:right"><a href="#"><i class="fa fa-volume-up"></i></a></li>
         </div>
       </ul>
     </nav>
@@ -38,6 +38,5 @@
           }
         }
        ?>
-    </main>
   </body>
 </html>

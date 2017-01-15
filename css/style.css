@@ -131,10 +131,15 @@ html, body{
 }
 
 .pokemonDetailedInfo{
-  /*width: 33%; */
+  display: block;
+  margin-top: 6.25%;
   display: none;
 }
 
+.HeightIcon{
+  float: left;
+  line-height: 23px !important;
+}
 .pokemonName{
   font-size: 50px;
 }

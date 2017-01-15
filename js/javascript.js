@@ -21,9 +21,9 @@ function getPokemonByNameOrId() {
 }
 
 function setDetailedPokemonInfo(pokemon) {
-  $(#pokemonDetailedInfo).hide();
-  var weight = pokemon.weight / 10 + ' kg';
-  var height = pokemon.height / 10 + ' m';
+  $('#pokemonDetailedInfo').hide();
+  var weight = 'Weight: ' + pokemon.weight / 10 + ' kg';
+  var height = 'Height: ' + pokemon.height / 10 + ' m';
   document.getElementById('pokemonWeight').innerHTML = weight;
   document.getElementById('pokemonHeight').innerHTML = height;
   for(var i = 0; i < pokemon.abilities.length; i++)
@@ -35,7 +35,7 @@ function setDetailedPokemonInfo(pokemon) {
       console.log('Hidden ability: ' + pokemon.abilities[i].ability.name.toString());
     }
   }
-  $(#pokemonDetailedInfo).show();
+  $('#pokemonDetailedInfo').show();
 }
 
 function padString(value) {
